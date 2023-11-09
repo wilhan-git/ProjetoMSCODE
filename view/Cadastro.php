@@ -30,6 +30,7 @@
         }else{
             $classeModal = " ";
             $msgErro = "Email já Cadastrado";
+            
         }
        
     }
