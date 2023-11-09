@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400&family=Open+Sans:wght@300;400;500&family=Poppins:ital,wght@0,100;0,200;0,500;0,600;1,100;1,200;1,300&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ 
+    font-family: 'Inter',sans-serif;
+}
+:root{
+    --cor-padrao:#ff523b;
+    --cor-padrao-hover:#f3b2e5;
+    --cor-fonte:#fff;
+    --cor-fonte-p:#555;
+    --cor-btn:#F2CB05;
+    --cor-btn-hover:#D98E04;
+    --cor-btn-fonte:#BF3604;
+    --cor-fonte-corpo:#592B11;
+    --cor-fonte-corpo-leve:#BF7636;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-fonte-corpo-leve);
+    
+}
+.container-cadastro{
+    width: 95vw;
+    height: 80vh;
+    display: flex;
+    box-shadow:5px 5px 10px rgba(0, 0, 0, .212);
+    font-family: "Inter",sans-serif;
+}
+
+.form-image{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-btn-fonte);
+    padding: 1rem;
+}
+
+.form-image img{
+    width: 31rem;
+}
+
+.form-cadastro{
+    width: 50%;
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Inter',sans-serif;
+    background-color: var(--cor-fonte);
+    padding: 1rem;
+}
+.form-header{
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+.login-button{
+    display: flex;
+    align-items: center;
+}
+
+.login-button button {
+    border: none;
+    background-color: var(--cor-btn);
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+
+
+}
+.login-button button:hover{
+    background-color: var(--cor-btn-hover);
+}
+
+.login-button button a{
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+
+.form-header h1::after{
+    content: '';
+    display: block;
+    width: 5rem;
+    height: 0.3rem;
+    background-color: var(--cor-btn-hover);
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+
+}
+
+.input-group{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1rem 0;
+
+}
+
+.input-box{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.input-box input{
+    margin: 0.3rem 0;
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px #0000001c;
+}
+
+.input-box input:hover{
+    background-color: #eeeeee75;
+}
+
+.input-box input:focus-visible{
+    outline: 1px solid var(--cor-fonte-corpo-leve);
+}
+
+.input-box label,.genero-titulo h6{
+    font-family: 'Inter',sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #000000c0;
+}
+.input-box input::placeholder{
+    color: #000000be;
+}
+
+.genero-group{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.62rem;
+    padding: 0 0.5rem;
+}
+
+.genero-input{
+    display: flex;
+    align-items: center;
+}
+
+.genero-input input{
+    margin-right: 0.35rem;
+}
+
+.genero-input label{
+    font-family: 'Inter',sans-serif;
+    font-size: 0.81rem;
+    font-weight: 500;
+    color: #000000be;
+    margin-right: 10px;
+}
+
+.cadastrar-button input{
+    width: 100%;
+    margin-top: 0.1rem;
+    border: none;
+    background-color: var(--cor-btn);
+    padding: 0.62rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cadastrar-button input:hover{
+    background-color: var(--cor-btn-hover);
+}
+
+.cadastrar-button input{
+    font-family: 'Inter',sans-serif;
+    text-decoration: none;
+    font-size: 0.93rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+@media screen and (max-width:958px){
+    .form-image{
+        display: none;
+    }
+
+    .container-cadastro{
+        width: 50%;
+    }
+
+    .form-cadastro{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:926px){
+    .container-cadastro{
+        width: 90%;
+        height: auto;
+    }
+
+    .input-group{
+        flex-direction: column;
+        overflow-y: scroll;
+        flex-wrap: nowrap;
+        max-height: 10rem;
+        padding-right: 5rem;
+    }
+
+    .genero-inputs{
+        margin-top: 2rem;
+    }
+
+    .genero-group{
+        flex-direction: column;
+    }
+
+    .genero-input{
+        margin-top: 0.5rem;
+    }
+}
+
+
+/*Modal*/
+
+.btn-modal{
+    padding:.6rem 1.2rem ;
+    background-color: var(--cor-fonte-p);
+    margin-top: 10px;
+    margin-right: 10px;
+    color: var(--cor-fonte);
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    opacity: 0.9;
+    font-size: 1rem;
+    transition: 0.4s;
+}
+
+
+button:hover{
+    opacity: 1;
+}
+
+#modal{
+    transition: 0.5s;
+    opacity: 1;
+    pointer-events: all;
+}
+#fade{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0,0.6);
+    z-index: 5;
+}
+
+#modal{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 10;
+    width: 400px;
+    max-width: 90%;
+    padding: 1.2rem;
+    border-radius: 0.5rem;
+}
+
+.modal-header{
+    background:red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--cor-fonte-corpo);
+    margin-bottom: 0.5rem;
+    border-radius: 1rem;
+    padding-bottom: 1rem;
+
+}
+.modal-header h2{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+}
+.modal-body{
+    background-color: white;
+}
+
+.modal-body p{
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#modal.hide, #fade.hide{
+    opacity: 0;
+    pointer-events: none;
+}
+
