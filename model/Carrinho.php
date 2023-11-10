@@ -43,53 +43,5 @@
 
             }
             
-    
-
-    /*
-
-   
-       public function adicionarProduto( Produto $produto){
-            $noCarrinho = false;
-            $this->setTotal($produto);
-            if(count($this->getCarrinho()) > 0){
-                foreach($this->getCarrinho() as $produtoss){
-                    if($produtoss->getId() === $produto->getId()){
-                        $quantidade = $produtoss->getQuantidade() + $produto->getQuantidade();
-                        $produtoss->setQuantidade($quantidade);
-                        $noCarrinho = true;
-                        break;
-
-                    }
-                }
-            } 
-            if(!$noCarrinho){
-                $this->setProdutoNoCarrinho($produto);
-             }
-        }
-           
-
-        
-       
-
-       public function setProdutoNoCarrinho($produto){
-        $_SESSION['carrinho']['produtos'][] = $produto;
-       }
-
-       public function setTotal(Produto $produto){
-        $_SESSION['carrinho']['total']+= $produto->getPreco() * $produto->getQuantidade();
-       }
-
-       public function removerProduto(){ 
-
-       }
-
-       public function getCarrinho(){
-            return $_SESSION['carrinho']['produtos'] ?? [];
-       }
- }
-
-
-
-*/
     }
 ?>

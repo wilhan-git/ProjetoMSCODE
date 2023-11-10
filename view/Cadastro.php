@@ -1,36 +1,42 @@
 <?php
     require_once('/xampp/htdocs/ProjetoFinal/model/CadastroUser.php');
+    require_once('../assets/config/limpeza.php');
     $msgErro = "";
     $classeModal = "hide";
 
     if (isset($_POST['cadastro'])) {
-        $nome = $_POST['nome'];
-        $sobrenome = $_POST['sobrenome'];
+        $limpeza = new Limpeza();
+        $nome = $limpeza->limpeza_string($_POST['nome']);
+        $sobrenome =$limpeza->limpeza_string($_POST['sobrenome']);
         $email = $_POST['email'];
         $senha = password_hash($_POST['senha'], PASSWORD_DEFAULT);
         $repitaSenha = $_POST['repitaSenha'];
         $cidade = $_POST['cidade'];
         $estado = $_POST['estado'];
         $cpf = $_POST['cpf'];
-        $contato = $_POST['contato'];
+        $contato = $limpeza->limpeza_telefone($_POST['contato']);
         $genero = $_POST['genero'];
         $cadastrar = new CadastroUser($nome, $sobrenome, $cidade, $estado, $cpf, $contato, $genero, $email, $senha);
 
+        if($nome === false || $sobrenome === false) {
+            $msgErro = 'Somente letras e espaços no campo Nome e Sobrenome';
+            $classeModal = '';
+        }elseif($contato===false) {
+            $msgErro = 'No campo Contatos só e permitido Numeros, Favor adicionar DDD';
+            $classeModal = '';
+        }elseif ($cadastrar->validaEmail($email) == TRUE) {
+                if(password_verify($repitaSenha, $senha)) {
+                    $cadastrar->cadastrarUser();
+                    die(header("Location:http://localhost/ProjetoFinal/index.php"));
+                }else{
+                    $msgErro = "Senha Não Compativel";
+                    $classeModal = " ";
 
-        if ($cadastrar->validaEmail($email) == TRUE) {
-            if(password_verify($repitaSenha, $senha)) {
-                $cadastrar->cadastrarUser();
-                die(header("Location:http://localhost/ProjetoFinal/index.php"));
-            }else{
-                $msgErro = "Senha Não Compativel";
-                $classeModal = " ";
-
-            } 
+                } 
                 
         }else{
             $classeModal = " ";
             $msgErro = "Email já Cadastrado";
-            
         }
        
     }
