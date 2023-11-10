@@ -99,11 +99,11 @@
                     </div>
                     <div class="input-box">
                         <label for="senha">Senha</label>
-                        <input type="password" name="senha" id="Isenha" required>
+                        <input type="password" name="senha" minlength="6"   id="Isenha" required>
                     </div>
                     <div class="input-box">
                         <label for="repitaSenha">Repita sua Senha</label>
-                        <input type="password" name="repitaSenha" id="IrepitaSenha" required>
+                        <input type="password" name="repitaSenha" minlength="6" id="IrepitaSenha" required>
                     </div>
                     <div class="input-box">
                         <label for="cidade">Cidade</label>
@@ -113,7 +113,7 @@
                     <div class="input-box">
 
                         <label for="estado">UF</label>
-                        <input type="text" id="Iestado" name="estado" required>
+                        <input type="text" id="Iestado" maxlength="2" name="estado" required>
                     </div>
 
                     <div class="input-box">
